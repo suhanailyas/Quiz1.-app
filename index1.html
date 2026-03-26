@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Premium Quiz App</title>
+
+<link rel="stylesheet" href="script1.css">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body class="light-mode">
+
+<div class="container mt-5">
+
+<!-- START -->
+<div id="startScreen" class="glass p-4 text-center">
+    <h2><i class="fa fa-brain"></i> Smart Quiz</h2>
+
+    <input type="text" id="name" class="form-control my-2" placeholder="Your Name">
+    <input type="text" id="reg" class="form-control my-2" placeholder="Registration No">
+
+    <button onclick="startQuiz()" class="btn btn-primary w-100 mt-3">
+        <i class="fa fa-play"></i> Start Quiz
+    </button>
+</div>
+
+<!-- QUIZ -->
+<div id="quizScreen" class="glass p-4" style="display:none;">
+
+    <div class="d-flex justify-content-between">
+        <h5 id="userInfo"></h5>
+        <button onclick="toggleMode()" class="btn btn-dark">
+            <i class="fa fa-moon"></i>
+        </button>
+    </div>
+
+    <div class="progress my-3">
+        <div id="progressBar" class="progress-bar"></div>
+    </div>
+
+    <h6 id="timer"><i class="fa fa-clock"></i> 30</h6>
+
+    <h4 id="question"></h4>
+
+    <div id="options"></div>
+
+    <button onclick="nextQuestion()" class="btn btn-success mt-3">
+        Next <i class="fa fa-arrow-right"></i>
+    </button>
+
+</div>
+
+<!-- RESULT -->
+<div id="resultScreen" class="glass p-4" style="display:none;">
+    <h2><i class="fa fa-trophy"></i> Result</h2>
+
+    <p id="finalInfo"></p>
+
+    <div id="review"></div>
+
+    <h3 id="finalScore"></h3>
+
+    <button onclick="downloadPDF()" class="btn btn-danger mt-3">
+        <i class="fa fa-file-pdf"></i> Download PDF
+    </button>
+</div>
+
+</div>
+
+<script src="styling1.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+</body>
+</html>
